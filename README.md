@@ -1,4 +1,7 @@
-# XamarinAlliance
-### Welcome to the Xamarin Alliance
 
-Learn about developing Xamarin apps using the Xamarin Alliance, organized by the MSFT Belux DX team
+## Welcome to the Xamarin Alliance
+\#XamarinAlliance
+
+####A multi challenge experience for developers to build their first connected Xamarin application.
+
+Organized by the MSFT Belux DX team
