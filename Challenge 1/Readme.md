@@ -74,6 +74,6 @@ Depending on your preferences of OS and Visual Studio version, following one of 
 
 ## <a name="gethelp"></a>Getting help
 
-* Check the [Xamarin Forum](forums.xamarin.com/)
+* Check the [Xamarin Forums](https://forums.xamarin.com/)
 * Tweet hashtag [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance)
 * Send an email to ...
