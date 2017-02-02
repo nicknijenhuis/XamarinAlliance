@@ -24,13 +24,14 @@ With Xamarin you can build cross-platform mobile apps and you can do so on **Win
 
 The goal of the Xamarin Alliance template app is to allow the user to display the list of Star Wars characters.  In the first version of the app we'll only have a single list page which lists the different characters and some details, with no further interaction on these items. The character data is stored in a JSON document and packaged inside the app. In the next coding challenges, we'll improve and expand the functionality of the app.
 
-**TIP:** if you're not into Star Wars, you could easily modify the app template to display recipes, movies, your favorite team's players, etc. Also, feel free to restyle the app, which is currently fairly bland.
-
-App screenshot: ![alt text](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xamarinallianceapp1.jpg "Xamarin Alliance Template App")
-
 The solution for the Xamarin Alliance template app contains projects for Windows UWP and Android. You can remove any of these projects, depending on your development environment or preference (e.g. you cannot develop UWP on Mac).
 
 All data in the template app is courtesy of [StarWars.com](http://www.starwars.com/databank).
+
+![Xamarin Alliance Template App](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xamarinallianceapp1.jpg)
+
+
+**TIP:** if you're not into Star Wars, you could easily modify the app template to display recipes, movies, your favorite team's players, etc. Also, feel free to restyle the app, which is currently fairly bland.
     
 
 ## <a name="details"></a>Challenge Details
