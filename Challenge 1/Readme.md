@@ -61,6 +61,7 @@ Depending on your preferences of OS and Visual Studio version, following one of 
 ### 2. Get/Develop an app
 
 **I want to use the Xamarin Alliance template app**
+
 1. Download the source code from this GitHub repository.
 
     a) Navigate to the [Xamarin Alliance GitHub repo](https://github.com/msdxbelux/XamarinAlliance)
@@ -75,6 +76,7 @@ Depending on your preferences of OS and Visual Studio version, following one of 
 4. Optionally, modify the app template code to make it your own app. You can find out all the basics about building Xamarin Forms based apps [here](https://msdn.microsoft.com/en-us/library/mt679501.aspx).
 
 **I'm building my own app**
+
 1. Open up your developer tool (Visual Studio or Xamarin Studio) and start write your app.
 
 
