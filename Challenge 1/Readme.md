@@ -31,8 +31,8 @@ All data in the template app is courtesy of [StarWars.com](http://www.starwars.c
 ![Xamarin Alliance Template App](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xamarinallianceapp1.jpg)
 
 
-**TIP:** if you're not into Star Wars, you could easily modify the app template to display recipes, movies, your favorite team's players, etc. Also, feel free to restyle the app, which is currently fairly bland.
-    
+> **TIP:** if you're not into Star Wars, you could easily modify the app template to display recipes, movies, your favorite team's players, etc. Also, feel free to restyle the app, which is currently fairly bland.
+  
 
 ## <a name="details"></a>Challenge Details
 
