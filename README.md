@@ -1,4 +1,4 @@
-## Welcome to the Xamarin Alliance
+![alt text](https://github.com/msdxbelux/XamarinAlliance/blob/master/covr.png "Logo Title Text 1")
 \#XamarinAlliance
 
 ####A multi challenge experience for developers to build their first connected Xamarin application.
