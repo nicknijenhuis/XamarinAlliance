@@ -26,7 +26,7 @@ The goal of the Xamarin Alliance template app is to allow the user to display th
 
 **TIP:** if you're not into Star Wars, you could easily modify the app template to display recipes, movies, your favorite team's players, etc. Also, feel free to restyle the app, which is currently fairly bland.
 
-![alt text](https://github.com/msdxbelux/XamarinAlliance/raw/master/src/common/images/icon48.png "Xamarin Alliance Template App")
+App screenshot: ![alt text](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xamarinallianceapp1.jpg "Xamarin Alliance Template App")
 
 The solution for the Xamarin Alliance template app contains projects for Windows UWP and Android. You can remove any of these projects, depending on your development environment or preference (e.g. you cannot develop UWP on Mac).
 
