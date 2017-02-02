@@ -29,7 +29,7 @@ The Xamarin Alliance template app has been built using [Xamarin Forms](https://w
 
 All data in the template app is courtesy of [StarWars.com](http://www.starwars.com/databank).
 
-![Xamarin Alliance Template App](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xamarinallianceapp1.jpg)
+![Xamarin Alliance Template App](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xa_screenshot1.jpg)
 
 
 > **TIP:** if you're not into Star Wars, you could easily modify the app template to display recipes, movies, your favorite team's players, etc. Also, feel free to restyle the app, which is currently fairly bland.
@@ -60,13 +60,29 @@ Depending on your preferences of OS and Visual Studio version, following one of 
 
 ### 2. Get/Develop an app
 
-* I want to use the Xamarin Alliance template app
+**I want to use the Xamarin Alliance template app**
+1. Download the source code from this GitHub repository.
 
-* I'm building my own app
+    a) Navigate to the [Xamarin Alliance GitHub repo](https://github.com/msdxbelux/XamarinAlliance)
+
+    b) Click the green 'Clone or download' button and either download the zip file or clone the repo using Git.
+
+    ![Clone or download source code](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xa_clone_download.jpg)
+2. Unblock zip file (ignore this step if you've cloned the repo)
+
+    Right-click the zip file in Windows Explorer and check the 'Unblock' checkbox and press 'OK'.
+3. Extract the zip file onto your local disk (ignore this step if you've cloned the repo)
+4. Optionally, modify the app template code to make it your own app. You can find out all the basics about building Xamarin Forms based apps [here](https://msdn.microsoft.com/en-us/library/mt679501.aspx).
+
+**I'm building my own app**
+1. Open up your developer tool (Visual Studio or Xamarin Studio) and start write your app.
 
 
 ### 3. Run the app on your machine
 
+Choose the target platform and run the app on your development machine. You can run the app on one of the platform emulators, or deploy the app to a physical mobile device.
+
+Check the [following guide](https://msdn.microsoft.com/en-us/library/mt488769.aspx) for verifying your installation.
 
 
 ## <a name="completion"></a>Challenge Completion
