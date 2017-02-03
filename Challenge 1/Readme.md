@@ -72,23 +72,33 @@ Depending on your preferences of OS and Visual Studio version, following one of 
 2. Unblock zip file (ignore this step if you've cloned the repo)
 
     Right-click the zip file in Windows Explorer and check the 'Unblock' checkbox and press 'OK'.
-3. Extract the zip file onto your local disk (ignore this step if you've cloned the repo)
-4. Optionally, modify the app template code to make it your own app. You can find out all the basics about building Xamarin Forms based apps [here](https://msdn.microsoft.com/en-us/library/mt679501.aspx).
+3. Extract the zip file onto your local disk (ignore this step if you've cloned the repo).
+4. Open the solution in your IDE.
+5. Optionally, modify the app template code to make it your own app. You can find out all the basics about building Xamarin Forms based apps [here](https://msdn.microsoft.com/en-us/library/mt679501.aspx).
 
 **I'm building my own app**
 
-1. Open up your developer tool (Visual Studio or Xamarin Studio) and start write your app.
+1. Open up your IDE (Visual Studio or Xamarin Studio) and begin to write your app.
 
 
 ### 3. Run the app on your machine
 
-Choose the target platform and run the app on your development machine. You can run the app on one of the platform emulators, or deploy the app to a physical mobile device.
+In this step you'll run the app on your development machine. Depending on which platforms you want to support, you'll run the app for one or more platforms.
 
-Check the [following guide](https://msdn.microsoft.com/en-us/library/mt488769.aspx) for verifying your installation.
+* To run the app for a given platform, you right-click the corresponding project, and select **Set as startup project**
+
+![Set as startup project](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xa_set_startup_project.jpg)
+
+* Now select the appropriate **emulator** (or physical device) to run the app on and press F5.
+
+![Select emulator](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/images/xa_emulator.jpg)
+
+For a detailed description, check the [following guide](https://msdn.microsoft.com/en-us/library/mt488769.aspx) for verifying your installation.
 
 
 ## <a name="completion"></a>Challenge Completion
 
+When you have completed your coding challenge, feel free to tweet about using the [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance) hashtag.
 
 ## <a name="gethelp"></a>Getting help
 
