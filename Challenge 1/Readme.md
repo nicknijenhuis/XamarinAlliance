@@ -76,6 +76,9 @@ Depending on your preferences of OS and Visual Studio version, following one of 
 4. Open the solution in your IDE.
 5. Optionally, modify the app template code to make it your own app. You can find out all the basics about building Xamarin Forms based apps [here](https://msdn.microsoft.com/en-us/library/mt679501.aspx).
 
+> **TIP**: If in Visual Studio the Android and/or iOS project doesn't load and shows up as '(unavailable)', right-click the project and select **Reload project**.
+
+
 **I'm building my own app**
 
 1. Open up your IDE (Visual Studio or Xamarin Studio) and begin to write your app.
