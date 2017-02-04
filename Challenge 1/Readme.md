@@ -95,6 +95,8 @@ In this step you'll run the app on your development machine. Depending on which 
 
 For a detailed description, check the [following guide](https://msdn.microsoft.com/en-us/library/mt488769.aspx) for verifying your installation.
 
+> **TIP**: If you encounter the "Cannot connect to the debugger" when running on the VS Emulator for Android, follow the steps outlined [here](http://dotnetbyexample.blogspot.ru/2016/02/fix-for-could-not-connect-to-debugger.html).
+
 
 ## <a name="completion"></a>Challenge Completion
 
