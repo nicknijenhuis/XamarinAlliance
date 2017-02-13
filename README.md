@@ -4,4 +4,6 @@
 ####A multi challenge experience for developers to build their first connected Xamarin application.
 www.xamarinalliance.com
 
+Questions? Email us at: xamalliance@microsoft.com
+
 Organized by the MSFT Belux DX team
