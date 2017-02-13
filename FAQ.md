@@ -16,3 +16,18 @@ It’s very important to have in mind all the packages and plugins that you need
 ![Image 5](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%205.png)
 
 If your Visual Studio is already installed, you can go to Programs and Features in the Control Pane, and right click in Visual Studio. Select Change and then you can install all the packages missed.
+
+###The Magic of the Clean
+There are several problems in Xamarin that are solved with the ‘Clean Solution’ option. For example, we can solve this typical issue, just by cleaning the solution:
+
+![Image 6](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%206.png)
+
+![Image 7](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%207.png)
+
+![Image 8](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%208.png)
+
+![Image 9](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%209.png)
+
+![Image 10](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2010.png)
+
+![Image 11](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2011.png)
