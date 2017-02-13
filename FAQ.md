@@ -1,6 +1,7 @@
 #Frequently Asked Questions & Solutions
 
 [Installation Guide](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#installation-guide)
+[The Magic of the Clean](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#the-magic-of-the-clean)
 
 ###Installation Guide
 It’s very important to have in mind all the packages and plugins that you need to implement in the Visual Studio, to develop multi-platform apps without having any problem. If you don’t install all the components correctly, you’ll suffer a lot of errors in the compilation and deployment because Xamarin has a lot of dependencies, like Windows 10 SDK or Android SDK. So, these are the packages that you must install in the Visual Studio or Xamarin Studio:
