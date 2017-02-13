@@ -1,6 +1,7 @@
 #Frequently Asked Questions & Solutions
 
 [Installation Guide](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#installation-guide)
+
 [The Magic of the Clean](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#the-magic-of-the-clean)
 
 ###Installation Guide
