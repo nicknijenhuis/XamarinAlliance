@@ -33,3 +33,53 @@ There are several problems in Xamarin that are solved with the ‘Clean Solution
 ![Image 10](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2010.png)
 
 ![Image 11](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2011.png)
+
+###Be careful with long paths
+There is a limitation in the number of characters in the paths of a Xamarin project. It is a common error to save the project in long paths, such as desktop. The solution is very simple, we just must save it in the root directory, in C:/
+This is the error:
+The "CreateAdditionalLibraryResourceCache" task failed unexpectedly.System.IO.PathTooLongException: The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.   at System.IO.Path.LegacyNormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)   at System.IO.Path.NormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)   at System.IO.Path.InternalGetDirectoryName(String path)   at Xamarin.Android.Tools.Files.CopyIfChanged(String source, String destination)   at Xamarin.Android.Tasks.CreateAdditionalLibraryResourceCache.Execute()   at Microsoft.Build.BackEnd.TaskExecutionHost.Microsoft.Build.BackEnd.ITaskExecutionHost.Execute()   at Microsoft.Build.BackEnd.TaskBuilder.<ExecuteInstantiatedTask>d__26.MoveNext()
+
+![Image 12](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2012.png)
+
+We save the project in a smaller path:
+
+![Image 13](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2013.png)
+
+Clean the project:
+
+![Image 14](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2014.png)
+
+And rebuild it:
+
+![Image 15](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2015.png)
+
+No errors!
+
+![Image 16](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2016.png)
+
+###Java SDK Directory
+You must be sure that the latest Java SDK version is installed in your computer and the path that points to that SDK is correctly specified in the Visual Studio Features. The error is this: (the version is outdated)
+![Image 17](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2017.png)
+
+So first of all, go to the Oracle WebPage: 
+http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+Download the versión that fits your PC and install it. The version would be probably the 
+Windows x64	62.66 MB  	jre-8u121-windows-x64.exe 
+If you have a Windows.
+Uninstall the older version:
+
+![Image 18](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2018.png)
+
+And set the path of the new one in the Visual Studio:
+
+![Image 19](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2019.png)
+![Image 20](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2020.png)
+![Image 21](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2021.png)
+
+Check it:
+
+![Image 22](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2022.png)
+
+Rebuild and…..
+
+![Image 23](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2023.png)
