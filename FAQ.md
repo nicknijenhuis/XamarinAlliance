@@ -149,3 +149,21 @@ Solution:
 10th Step: Stop the running application and close XCode.
 
 11th Step: Return to Visual Studio. Open the iOS project build configuration and select your device.
+
+###Windows Temporary Key Issues (Visual Studio 2017 RC)
+On loading a new project, I get this error:
+"Unable to copy the file 'Windows_TemporaryKey.pfx' from the project template to the project. Cannot find file 'C:\Path\Windows_TemporaryKey.pfx'"
+
+Solution:
+
+Manually add a UWP project to the Forms solution or use the MasterDetail template instead of the blank one. You will most likely get an error about a failure to add the Microsoft.NETCore.UniversalWindowsPlatform NuGet package to the UWP project, but it will be created and then you can just install the missing package.
+
+###Project fails with multiple errors regarding missing mscorlib reference
+
+Solution: 
+
+Open your Android project .csproj file and add a reference to it with 
+
+```
+<Reference Include="mscorlib" />
+```
