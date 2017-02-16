@@ -9,6 +9,7 @@ Welcome to our first #XamarinAlliance coding challenge. Through a series of **co
 * [Challenge completion](#completion)
 * [Getting help](#gethelp)
 
+If you encounter any issues make sure to check out our FATQ [(Frequently asked TECHNICAL questions)](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md)
 
 ## <a name="description"></a>Challenge Description
 
