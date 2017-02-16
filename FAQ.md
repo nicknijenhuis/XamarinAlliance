@@ -10,6 +10,10 @@ Navigate using the quicklinks below to some of the solutions to questions we've 
 
 [Java SDK Directory](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#java-sdk-directory)
 
+[Android.Views.InflateException](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#androidviewsinflateexception)
+
+[Codesigning Certificate for IOS in Visual Studio](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#codesigning-certificate-for-ios-in-visual-studio)
+
 ###Installation Guide
 It’s very important to have in mind all the packages and plugins that you need to implement in the Visual Studio, to develop multi-platform apps without having any problem. If you don’t install all the components correctly, you’ll suffer a lot of errors in the compilation and deployment because Xamarin has a lot of dependencies, like Windows 10 SDK or Android SDK. So, these are the packages that you must install in the Visual Studio or Xamarin Studio:
 
