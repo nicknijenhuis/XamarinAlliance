@@ -2,9 +2,9 @@
 
 Navigate using the quicklinks below to some of the solutions to questions we've received:
 
-[Installation Guide](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#installation-guide)
+[Installation Guide](#installation-guide)
 
-[The Magic of the Clean](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#the-magic-of-the-clean)
+[The Magic of the Clean](#the-magic-of-the-clean)
 
 [Be careful with long paths](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#be-careful-with-long-paths)
 
@@ -13,6 +13,10 @@ Navigate using the quicklinks below to some of the solutions to questions we've 
 [Android.Views.InflateException](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#androidviewsinflateexception)
 
 [Codesigning Certificate for IOS in Visual Studio](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md#codesigning-certificate-for-ios-in-visual-studio)
+
+[Windows temporary key issues (Visual Studio 2017 RC)](#windows-temporary-key-issues-visual-studio-2017-rc)
+
+[Project fails with mulitple errros regarding missing mscorlib reference](#project-fails-with-multiple-errors-regarding-missing-mscorlib-reference)
 
 ###Installation Guide
 It’s very important to have in mind all the packages and plugins that you need to implement in the Visual Studio, to develop multi-platform apps without having any problem. If you don’t install all the components correctly, you’ll suffer a lot of errors in the compilation and deployment because Xamarin has a lot of dependencies, like Windows 10 SDK or Android SDK. So, these are the packages that you must install in the Visual Studio or Xamarin Studio:
