@@ -15,6 +15,7 @@ It’s very important to have in mind all the packages and plugins that you need
 
 ![Image 1](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%201.png)
 
+
 ![Image 2](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%202.png)
 
 ![Image 3](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%203.png)
@@ -24,6 +25,7 @@ It’s very important to have in mind all the packages and plugins that you need
 ![Image 5](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%205.png)
 
 If your Visual Studio is already installed, you can go to Programs and Features in the Control Pane, and right click in Visual Studio. Select Change and then you can install all the packages missed.
+
 
 ###The Magic of the Clean
 There are several problems in Xamarin that are solved with the ‘Clean Solution’ option. For example, we can solve this typical issue, just by cleaning the solution:
@@ -63,7 +65,7 @@ No errors!
 
 ![Image 16](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2016.png)
 
-###Java SDK Directory
+####Java SDK Directory
 You must be sure that the latest Java SDK version is installed in your computer and the path that points to that SDK is correctly specified in the Visual Studio Features. The error is this: (the version is outdated)
 ![Image 17](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2017.png)
 
@@ -73,7 +75,7 @@ Download the versión that fits your PC and install it. The version would be pro
 Windows x64	62.66 MB  	jre-8u121-windows-x64.exe 
 If you have a Windows.
 Uninstall the older version:
-
+#
 ![Image 18](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2018.png)
 
 And set the path of the new one in the Visual Studio:
@@ -89,3 +91,57 @@ Check it:
 Rebuild and…..
 
 ![Image 23](https://github.com/msdxbelux/XamarinAlliance/blob/master/Images/Image%2023.png)
+
+
+###Android.Views.InflateException
+
+Error: Android.Views.InflateException: Binary XML file line #1: Error inflating class android.support.v7.widget.Toolbar
+
+Aditional details: This happens when creating a new project, before editing any of the code. 
+
+Solution: In the Android Project: 
+
+1st Step: Remove Xamarin Forms and all its dependencies with Nuget Manager
+
+2nd Step: Restart Visual Studio
+
+3rd Step: Clean the project
+
+4th Step: Rebuild the project
+
+#Codesigning Certificate for IOS in Visual Studio
+
+Error: No valid iOS code signing keys found in keychain. You need to request a codesigning certificate from https://developer.apple.com
+
+Solution:
+
+1st Step: Inside the IOS solution, open the Info.plist file. We insert our Bundle ID. If it has underline symbols it will transform them into dashes.
+
+2nd Step: In the same file, change the deployment target to the version our device is running.
+
+3rd Step: Open the IOS solution project options and revise the following:
+-	Configuration: Debug
+-	Platform: Your device (Simulator by default)
+-	SDK Version: Default.
+-	Linker Options: Link all assemblies 
+-	Supported Architectures: ARMv7 (Should work from iOS 6 onwards)
+
+4th Step: Revise the iOS Bundle Signing
+-	Identity: Developer
+-	Provisioning profile: Automatic
+
+5th Step: Open Xcode, create a new project where the name and organization make the same Bundle ID as step 1.
+
+6th Step: Change deployment target to our connected device.
+
+7th Step: Verify that Automatically Manage Signing is checked. Provisioning Profile: XCode Managed Profile should appear.
+
+8th Step: You can view the profiles created (Normal and interface test) in two ways.
+-	Preferences  Accounts  Details
+-	In the directory: ~/Library/MobileDevice/Provisioning Profiles
+
+9th Step: Run the application selecting your device as target. When it finishes building it will ask you to go to your device and accept the certificate.
+
+10th Step: Stop the running application and close XCode.
+
+11th Step: Return to Visual Studio. Open the iOS project build configuration and select your device.
