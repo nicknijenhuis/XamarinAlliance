@@ -1,4 +1,4 @@
-#Frequently Asked Questions & Solutions
+#Frequently Asked Technical Questions & Solutions
 
 Navigate using the quicklinks below to some of the solutions to questions we've received:
 
