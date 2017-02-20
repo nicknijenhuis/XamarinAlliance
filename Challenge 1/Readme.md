@@ -110,4 +110,4 @@ When you have completed your coding challenge, feel free to tweet about using th
 
 * Check the [Xamarin Forums](https://forums.xamarin.com/)
 * Tweet hashtag [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance)
-* Send an email to xamarinalliance@outlook.com
+* Create an issue in the [GitHub repo](https://github.com/msdxbelux/XamarinAlliance/issues) - you can add labels and milestones to provide additional context
