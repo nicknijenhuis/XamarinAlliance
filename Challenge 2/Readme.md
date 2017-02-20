@@ -98,6 +98,85 @@ More details about hierarchical navigation can be found [here](https://developer
 
 ### <a name="masterdetailnavigation"></a>Master-Detail pages
 
+With the *MasterDetailPage* class you can represent a master-detail page relationship, where the master has a list of items and the item page shows the details about items in the master page. In addition to navigating to the detail page upon selecting an item in the master page, there is a navigation bar that allows navigating to the active item details. As for the hierarchical navigation, the detail page also contains the built-in navigation to return to the master page.
+
+A *MasterDetailPage* contains 2 properties to represent the master and detail pages, which are both of type *Page*. It is recommended that the master page is of type *ContentPage*. You can create a *MasterDetailPage* using XAML or programmatically using C#:
+
+```xml
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:MasterDetailPageNavigation;assembly=MasterDetailPageNavigation"
+                  x:Class="MasterDetailPageNavigation.MainPage">
+    <MasterDetailPage.Master>
+        <local:MasterPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:CharacterDetailsPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>  
+```
+
+The corresponding C# code would be as follows:
+```csharp
+public class MainPageCS : MasterDetailPage
+{
+    MasterPageCS masterPage;
+
+    public MainPageCS ()
+    {
+        masterPage = new MasterPageCS ();
+        Master = masterPage;
+        Detail = new NavigationPage (new ContactsPageCS ());
+        ...
+    }
+    ...
+}
+```
+
+With the above code fragments we still need to create the actual master and detail pages - these can both be *ContentPage* instances.
+
+> **Note:** when creating the master page, it is required that the *Title* property is set, or an exception will occur.
+
+```xml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MasterDetailPageNavigation.MasterPage"
+             Padding="0,40,0,0"
+             Icon="xamarinalliance.png"
+             Title="Star Wars Characters">
+```
+
+Similar to the hierarchical navigation, the detail page contains the details of the selected item - it can be represented as a *ContentPage*.
+
+To navigate from the master page to the detail page, we implement the *ItemSelected* event handler in the main page, which is of type *MasterDetailPage*. The main page gets access to the listview in the master page through a public property on the master page. The selected item is then passed as a constructor parameter to the detail page.
+
+```csharp
+public partial class MainPage : MasterDetailPage
+{
+    public MainPage ()
+    {
+        ...
+        masterPage.ListView.ItemSelected += OnItemSelected;
+    }
+
+    void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
+    {
+        var item = e.SelectedItem as MasterPageItem;
+        if (item != null) {
+            Detail = new NavigationPage ((Page)Activator.CreateInstance (item.TargetType));
+            masterPage.ListView.SelectedItem = null;
+            IsPresented = false;
+        }
+    }
+}
+```
+
+
+For more information about Master-Details pages, check [here](https://developer.xamarin.com/guides/xamarin-forms/user-interface/navigation/master-detail-page/).
 
 
 ## <a name="completion"></a>Challenge Completion
@@ -105,6 +184,8 @@ More details about hierarchical navigation can be found [here](https://developer
 You have unlocked this challenge when you:
 1. **have multiple pages in your app,**
 2. **add navigation to the different pages.**
+
+Of course it's up to you to go wild in styling the different pages, adding other data, or adding more pages (e.g. about page).
 
 When you have completed your coding challenge, feel free to tweet about using the [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance) hashtag.
 
