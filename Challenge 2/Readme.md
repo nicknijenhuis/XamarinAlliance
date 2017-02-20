@@ -17,6 +17,7 @@ If have been using the Xamarin Alliance Template App, you noticed that the app o
 If you have been using your own app, you might have already unlocked this challenge; do read on, because maybe you'll learn something new or get some inspiration for a new feature.
 
 The goal of this coding challenge is improve the user experience of our app by **adding multiple pages and implement navigation**. To unlock this challenge, you will need to:
+
 1. **have multiple pages in your app,**
 2. **add navigation to the different pages.**
 
@@ -182,6 +183,7 @@ For more information about Master-Details pages, check [here](https://developer.
 ## <a name="completion"></a>Challenge Completion
 
 You have unlocked this challenge when you:
+
 1. **have multiple pages in your app,**
 2. **add navigation to the different pages.**
 
@@ -193,7 +195,7 @@ When you have completed your coding challenge, feel free to tweet about using th
 
 * Check the [Xamarin Forums](https://forums.xamarin.com/)
 * Tweet hashtag [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance)
-* Create an issue in the [GitHub repo](https://github.com/msdxbelux/XamarinAlliance/issues) - you can add labels and milestones to provide additional context
+* Questions or issues? Check out the [FAQ](https://github.com/msdxbelux/XamarinAlliance/blob/master/FAQ.md) or [log an issue](https://github.com/msdxbelux/XamarinAlliance/issues)
 
 
 ## Hidden Gem
