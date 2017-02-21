@@ -21,7 +21,7 @@ The goal of this coding challenge is improve the user experience of our app by *
 1. **have multiple pages in your app,**
 2. **add navigation to the different pages.**
 
-We'll take a look at how you can add multiple pages to your Xamarin app and how to navigation between the different pages. As we have been using Xamarin.Forms for the template app, we'll explain these concepts using Xamarin.Forms, although you're free to implement a native app too.
+We'll take a look at how you can add multiple pages to your Xamarin app and how to navigation between the different pages. As we have been using Xamarin.Forms for the template app, we'll explain these concepts using Xamarin.Forms, although you're free to implement a platform-specific UI too.
 
 By the time we release the third challenge, we'll also publish the updated source code for the Xamarin Alliance template app.
 
