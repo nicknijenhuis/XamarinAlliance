@@ -23,6 +23,10 @@ The goal of this coding challenge is improve the user experience of our app by *
 
 We'll take a look at how you can add multiple pages to your Xamarin app and how to navigation between the different pages. As we have been using Xamarin.Forms for the template app, we'll explain these concepts using Xamarin.Forms, although you're free to implement a platform-specific UI too.
 
+This is what the Xamarin Alliance template app could look like when navigation is implemented. In the screenshots below, you can see the main screen with the list of characters and the detail screen that shows the details of the selected character.
+
+![Challenge 2 outcome](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%202/images/xa_ch2_result.jpg)
+
 By the time we release the third challenge, we'll also publish the updated source code for the Xamarin Alliance template app.
 
 
