@@ -5,11 +5,11 @@ using XamarinAllianceApp.Controllers;
 
 namespace XamarinAllianceApp.Views
 {
-    public partial class CharacterList : ContentPage
+    public partial class CharacterListPage : ContentPage
     {
         private CharacterService service;
 
-        public CharacterList()
+        public CharacterListPage()
         {
             InitializeComponent();
 
