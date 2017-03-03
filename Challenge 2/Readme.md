@@ -1,7 +1,7 @@
 # Coding Challenge 2: Adding pages and navigation
 
 ## Introduction
-Welcome to the second #XamarinAlliance challenge, and this time it's a real **coding** challenge. If you have completed the [first challenge](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/Readme.md), you're developer machine should be all set to start writing some code.
+Welcome to the second #XamarinAlliance challenge, and this time it's a real **coding** challenge. If you have completed the [first challenge](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%201/Readme.md), your developer machine should be all set to start writing some code.
 
 * [Challenge description](#description)
 * [Page navigation](#pagenavigation)
