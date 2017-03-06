@@ -22706,16 +22706,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\code\\Xamarin\\XamarinAlliance\\Challenge 1\\src\\XamarinAlliance\\UWP\\XamarinAllianceApp.UWP.csproj",
+      "projectUniqueName": "C:\\code\\Xamarin\\alliance\\Challenge 2\\src\\XamarinAlliance\\UWP\\XamarinAllianceApp.UWP.csproj",
       "projectName": "XamarinAllianceApp.UWP",
-      "projectPath": "C:\\code\\Xamarin\\XamarinAlliance\\Challenge 1\\src\\XamarinAlliance\\UWP\\XamarinAllianceApp.UWP.csproj",
-      "projectJsonPath": "C:\\code\\Xamarin\\XamarinAlliance\\Challenge 1\\src\\XamarinAlliance\\UWP\\project.json",
+      "projectPath": "C:\\code\\Xamarin\\alliance\\Challenge 2\\src\\XamarinAlliance\\UWP\\XamarinAllianceApp.UWP.csproj",
+      "projectJsonPath": "C:\\code\\Xamarin\\alliance\\Challenge 2\\src\\XamarinAlliance\\UWP\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\code\\Xamarin\\XamarinAlliance\\Challenge 1\\src\\XamarinAlliance\\XamarinAllianceApp\\XamarinAllianceApp.csproj": {
-              "projectPath": "C:\\code\\Xamarin\\XamarinAlliance\\Challenge 1\\src\\XamarinAlliance\\XamarinAllianceApp\\XamarinAllianceApp.csproj"
+            "C:\\code\\Xamarin\\alliance\\Challenge 2\\src\\XamarinAlliance\\XamarinAllianceApp\\XamarinAllianceApp.csproj": {
+              "projectPath": "C:\\code\\Xamarin\\alliance\\Challenge 2\\src\\XamarinAlliance\\XamarinAllianceApp\\XamarinAllianceApp.csproj"
             }
           }
         }
