@@ -1,4 +1,4 @@
-# Coding Challenge 3: Adding to a cloud-based backend
+# Coding Challenge 3: Adding a cloud-based backend
 
 ## Introduction
 Welcome to the third #XamarinAlliance coding challenge. If you have been using our template application you may have noticed that the data for our application is stored inside the mobile application in a JSON document.
