@@ -18,6 +18,8 @@ Navigate using the quicklinks below to some of the solutions to questions we've 
 
 [Project fails with mulitple errros regarding missing mscorlib reference](#project-fails-with-multiple-errors-regarding-missing-mscorlib-reference)
 
+[EmbeddedResource is not supported](#embeddedresource-is-not-supported)
+
 ###Installation Guide
 It’s very important to have in mind all the packages and plugins that you need to implement in the Visual Studio, to develop multi-platform apps without having any problem. If you don’t install all the components correctly, you’ll suffer a lot of errors in the compilation and deployment because Xamarin has a lot of dependencies, like Windows 10 SDK or Android SDK. So, these are the packages that you must install in the Visual Studio or Xamarin Studio:
 
@@ -171,3 +173,11 @@ Open your Android project .csproj file and add a reference to it with
 ```
 <Reference Include="mscorlib" />
 ```
+
+###EmbeddedResource is not supported
+When building the solution for the first time in Visual Studio 2015, you may get the error stating 'EmbeddedResource is not supported by one or more of the project's targets'.
+
+Solution:
+
+Open the solution in Visual Studio 2015, running as Administrator (right-click the VS 2015 icon and select 'Run as Administrator'). Build the solution and you should no longer get these errors. In the future, you can open the solution with Visual Studio 2015 as a regular user.
+
