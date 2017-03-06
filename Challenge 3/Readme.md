@@ -179,6 +179,10 @@ await CharacterTable.UpdateAsync(modifiedCharacter);
 await CharacterTable.DeleteAsync(badCharacter);
 ```
 
+The thing remaining is to **remove the JSON file** from the Xamarin application and to replace the call to read the data from the file by a call to **get the data from the mobile backend**.
+
+If you launch the app, you should see the same data as before, only the data is now coming from the Azure Mobile App. If you modify the data in the database and refresh the mobile client, you should see the updates appear in the app.
+
 
 ## <a name="resources"></a>Resources
 
