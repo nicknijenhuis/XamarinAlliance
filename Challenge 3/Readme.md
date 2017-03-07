@@ -151,10 +151,10 @@ Alternatively, if you have been using a JSON backend, you'll need to create the 
 
 ![Paste JSON as classes](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%203/images/xa_paste_classes.jpg)
 
-To get the JSON, you can invoke the mobile backend, which is just a REST-based service, using a tool like [Postman](https://www.getpostman.com/). Make sure to set the **ZUMO-API-VERSION** header to **2.0.0**. For example, to get the TodoItem table content, use the following request:
+To get the JSON, you can invoke the mobile backend, which is just a REST-based service, using a tool like [Postman](https://www.getpostman.com/). Make sure to set the **ZUMO-API-VERSION** header to **2.0.0**. For example, to get the Character table content, use the following request:
 
 ```
-GET https://service.azurewebsites.net/tables/TodoItem
+GET http://xamarinalliancebackend.azurewebsites.net/tables/character
 HEADERS: ZUMO-API-VERSION: 2.0.0 
 ```
 
