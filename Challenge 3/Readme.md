@@ -105,6 +105,8 @@ Now that we have our mobile backend up and running, we need to connect the Xamar
 
 To install the Azure Mobile App SDK for Xamarin, first **add the [Microsoft.Azure.Mobile.Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) NuGet package**. This package provides the *MobileServiceClient* class to connect to the backend.
 
+> **Important:** you need to add the NuGet package to both the portable class library project, as well as the platform-specific projects.
+
 We then need to **instantiate and configure the *MobileServiceClient*** to connect to our endpoint by providing it the URL to our Azure Mobile App:
 
 ```csharp
