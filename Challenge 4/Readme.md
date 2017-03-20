@@ -69,11 +69,15 @@ To configure authentication on the Azure Mobile App, you need to go through a fe
 2. Click Settings > Authentication/Authorization
 3. Make sure to switch **App Service Authentication** to **ON**
 4. Configure the identity providers you wish to enable
-5. Don't allow anonymous requests
 
 ![App Service Authentication](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%204/images/xa_ch4_appservice_auth.jpg)
 
+By default, the Azure Mobile App accepts anonymous requests. There are two options to refuse anonymous requests:
 
+* Configure the Azure Mobile App to not allow anonymous requests but instead require the user to sign in. This can be configured in the Azure portal (see screenshot above).
+* Update the mobile service implementation code (see the [online documentation](https://docs.microsoft.com/en-us/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-users#restrict-permissions-to-authenticated-users))
+  
+  
 If you have not implemented your own Azure Mobile App, make sure to update the current Azure Mobile Service to use the secured shared Azure Mobile App that we provided for you:
 
 [https://xamarinalliancesecurebackend.azurewebsites.net](https://xamarinalliancesecurebackend.azurewebsites.net)
