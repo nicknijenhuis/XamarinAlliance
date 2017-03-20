@@ -109,9 +109,9 @@ var result = await Client.InvokeApiAsync<Session>("Sessions", System.Net.Http.Ht
 
 Through the T Challenge we're looking for a Cross Platform application (across iOS, Android and Windows) that leverages the API.
 
-#### The T Challenge winner will receive 2 tickets to attend Techorama 2017 (May 22nd - 24th in Antwerp) and the application will be available to use for all attendees of Techorama 2017.
+### The T Challenge winner will receive 2 tickets to attend Techorama 2017 (May 22nd - 24th in Antwerp) and the application will be available to use for all attendees of Techorama 2017.
 
-Submissions should be made by Friday April 28th via this link: 
+To win the prize you should provide your application by Friday April 28th via this link: [Challenge T Submission](https://www.instant.ly/s/or7k6)
 
 All submissions will be reviewed by a jury made up of a Microsoft employee and the organisers of Techorama. 
 
