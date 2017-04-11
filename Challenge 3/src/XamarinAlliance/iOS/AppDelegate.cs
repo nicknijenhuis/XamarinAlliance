@@ -1,5 +1,6 @@
 ﻿
 using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace XamarinAllianceApp.iOS
@@ -11,6 +12,8 @@ namespace XamarinAllianceApp.iOS
 		{
 			// Initialize Xamarin Forms
 			global::Xamarin.Forms.Forms.Init ();
+
+            CurrentPlatform.Init();
 
 			LoadApplication (new App ());
 
