@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinAllianceApp.Views.CharacterDetailPage"
@@ -7,7 +7,7 @@
     <ContentPage.BackgroundImage>
         <OnPlatform x:TypeArguments="x:String" 
                     WinPhone="Assets/xa_background.jpg" 
-                    iOS="Resources/xa_background.jpg"
+                    iOS="xa_background.jpg"
                     Android="Resources/drawable/xa_background.jpg" 
                     />
     </ContentPage.BackgroundImage>
@@ -31,6 +31,7 @@
                 <Label Style="{StaticResource LabelHeaderStyle}">Movie Appearances:</Label>
                 <ListView x:Name="movieList"
                           ItemsSource="{Binding Item.Appearances}"
+						  BackgroundColor="Transparent"
                           RowHeight="20">
                     <ListView.ItemTemplate>
                         <DataTemplate>
