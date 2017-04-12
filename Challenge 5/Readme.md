@@ -128,7 +128,7 @@ If you have built your own mobile backend, you can find instruction on how to cr
 Now we'll use the Azure Storage client SDK to connect to Azure Storage from our application. Note that we need to provide the SAS token and also specify the Azure Storage account name - for the shared storage account this is **xamarinbackend**.
 
 ```csharp
-string storageAccountName = "xamarinbackend";
+string storageAccountName = "xamarinalliance";
 
 StorageCredentials credentials = new StorageCredentials(token);
 
