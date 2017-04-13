@@ -175,6 +175,8 @@ var guid = await client.InvokeApiAsync("/api/XamarinAlliance/ReceiveCredit");
 
 Once you have received this GUID, you can **submit it online** in the [submission form](https://aka.ms/xamarinalliancediploma). This will be your ticket to get your diploma.
 
+Diplomas will be distributed at the end of each month for all challenges completed before the end of June 2017.
+
 
 ## <a name="completion"></a>Challenge Completion
 
