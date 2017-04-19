@@ -13,9 +13,9 @@ Welcome to the sixth #XamarinAlliance challenge, and this time a **coding** chal
 ## <a name="description"></a>Challenge Description
 
 While using the Xamarin Alliance Template app, you'll see that we present all characters on the main page in a list. This works great and was enough to start out with.
-But often we like to show some seperation, mostly done through data grouping.
+But often we like to show some separation, mostly done through data grouping.
 
-In our case we can alter the main page and use each characters appearence to seperate them based on which movie they act in, this by showing the movie title as a group header.
+In our case we can alter the main page and use each character’s appearence to separate them based on which movie they act in, this by showing the movie title as a group header.
 
 So the goal of this coding challenge is to enhance the current list implementation and add a grouping feature, based on the already acquired character data.
 
@@ -33,7 +33,7 @@ The goal of this coding challenge is improve the user experience of our app by *
 
 Often, large sets of data can become unwieldy when presented in a continuously scrolling list. Enabling grouping can improve the user experience in these cases by better organizing the content and activating platform-specific controls that make navigating data easier.
 
-When grouping is activated for a ListView, a header row is added for each group. How and on what you group your data is totally up to you, but some steps are needed to be taken care off before the ListView will render this content.
+When grouping is activated for a ListView, a header row is added for each group. How and on what you group your data is totally up to you, but some steps need to be taken care off before the ListView will render this content.
 
 So to enable grouping you'll need to go through the following:
 
@@ -41,13 +41,13 @@ So to enable grouping you'll need to go through the following:
 * Set the ListView's ItemsSource to that list.
 * Set IsGroupingEnabled to true.
 * Set GroupDisplayBinding to bind to the property of the groups that is being used as the title of the group.
-* [Optional] Set GroupShortNameBinding to bind to the property of the groups that is being used as the short name for the group. The short name is used for the jump lists (rigt-side column on iOS - see example below, tile grid on Windows Phone).
+* [Optional] Set GroupShortNameBinding to bind to the property of the groups that is being used as the short name for the group. The short name is used for the jump lists (right-side column on iOS - see example below, tile grid on Windows Phone).
 
 ![Jump list iOS](https://github.com/Depechie/XamarinAlliance/blob/master/Challenge%206/images/xa_screenshot2.png)
 
 The first requirement, creating a list of lists, can be done in 2 different ways… Or your data service already provides a correct grouped stream, or you'll need to manipulate the given data into a correct format.
 
-In our case, the current data service gives a list of characters with a list of movie appearences within. But for our challenge we want to group our characters per movie, so the lists need to be in the other order.
+In our case, the current data service gives a list of characters with a list of movie appearances within. But for our challenge we want to group our characters per movie, so the lists need to be in the other order.
 
 To help out with reformatting the data, we have a small helper class that makes everything super easy to use and set up.
 ```csharp
@@ -78,19 +78,19 @@ To
 ```csharp
 public ObservableRangeCollection<Grouping<string, Character>> Items { get; set; } 
 ```
-That way we tackeld the fist item of our todo, creating a list of lists.
+That way we tackled the fist item of our todo, creating a list of lists.
 
 > **TIP:** Even though the Grouping class is very straightforward, you'll still need to do all the hard work yourself in code, to actually have a list of movies with each movie having a list of characters.
 
 Best place to do this, is in the ExecuteLoadItemsCommand also in the CharacterListViewModel.
-After you got all the characters, be sure to iterate them and keep track of each movie available in the appearences list and by doing this, create a new list per movie and add the charactes.
+After you got all the characters, be sure to iterate them and keep track of each movie available in the appearances list and by doing this, create a new list per movie and add the characters.
 Be sure to use the Grouping class and have the movie title as the key field.
 
 ### <a name="design"></a>Design
 
 This will tell the ListView to treat the given ItemSource as a Grouped one, meaning it will handle the List with Lists scenario. It also tells it what data part to use for the Group header.
-The code snippet above will already give us the correct sollution for this challenge, but will render each group header in an OS default look and feel.
-Although this can be enough for the some apps, we would like to format our headers in a nicer way and platform independent ( so same look and feel for each platform ).
+The code snippet above will already give us the correct solution for this challenge, but will render each group header in an OS default look and feel.
+Although this can be enough for some apps, we would like to format our headers in a nicer way and platform independent ( so same look and feel for each platform ).
 
 To do this, you'll need to add an extra DataTemplate, but this time not for an ItemTemplate, but one for a GroupHeaderTemplate.
 
