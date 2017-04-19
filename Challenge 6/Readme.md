@@ -1,210 +1,112 @@
-# Coding Challenge 3: Adding a cloud-based backend
+# Coding Challenge 6: Advanced UI Enhancements - List grouping
 
 ## Introduction
-Welcome to the third #XamarinAlliance coding challenge. If you have been using our template application you may have noticed that the data for our application is stored inside the mobile application in a JSON document.
-
-The advantage of this approach is that the application can work perfectly offline and doesn't suffer from slow connectivity. On the other hand, sharing data across users or devices is not possible and if the data changes, you need to go through publishing an application update in the app store.
-
-**The goal of this coding challenge will be to build a connected mobile app and move the data for the application to the cloud**. This will allow you to easily change the application data centrally; optionally you could add offline capabilities to overcome network connectivity issues.
-
-By completing this coding challenge, you will have learned how to connect your Xamarin cross-platform application to the cloud.
-
+Welcome to the sixth #XamarinAlliance challenge, and this time a **coding** challenge that will enhance the current application UI.
 
 * [Challenge description](#description)
-* [Getting started](#gettingstarted)
-* [Creating an Azure Mobile App](#createazure)
-* [Connecting to the Azure Mobile App](#connecttobackend)
-* [Resources](#resources)
+* [Grouping](#grouping)
+* [Design](#design)
 * [Challenge completion](#completion)
 * [Getting help](#gethelp)
 
 
 ## <a name="description"></a>Challenge Description
 
-As mentioned above, the goal of this challenge is to build a connected mobile application. You will connect your mobile application to a cloud-based backend, hosted in the cloud using [**Azure Mobile Apps**](https://azure.microsoft.com/en-us/services/app-service/mobile/). 
+While using the Xamarin Alliance Template app, you'll see that we present all characters on the main page in a list. This works great and was enough to start out with.
+But often we like to show some seperation, mostly done through data grouping.
 
-With Azure Mobile Apps you can build a mobile backend in the cloud. One of the key features is the ability to expose your application data as a REST-based service. But more than just providing you a place to host the data, Azure Mobile Apps gives you a lot more features, which we'll explore later.
+In our case we can alter the main page and use each characters appearence to seperate them based on which movie they act in, this by showing the movie title as a group header.
 
-In this challenge we will **replace the JSON file** inside the mobile app with an Azure Mobile App that exposes the same data as a **REST service**. We will then **connect the Xamarin app** to this backend.
+So the goal of this coding challenge is to enhance the current list implementation and add a grouping feature, based on the already acquired character data.
 
-These are the criteria for completing this challenge:
+We'll take a look at what our options are on adding grouping,  whether you start out with a new app or whether you have to work from an already existing data stream.
+After that we'll dive into the XAML to show you how to enable the grouping feature and what options you have to change the default design.
 
-1. **The Xamarin application connects to an Azure Mobile App backend.**
-2. **Optionally, you have built your own Azure Mobile App.**
+The goal of this coding challenge is improve the user experience of our app by **adding grouping to our character list overview**. To unlock this challenge, you will need to:
 
-If you have been using the template application, we already have an Azure Mobile App instance available for you to connect the Xamarin application to. You can find the sources for the mobile backend in our GitHub repo, if you want to host it in your own Azure subscription. Alternatively, you can create your own Azure Mobile App yourself.
+1. **reformatted the data from the service to a list of lists,**
+2. **redesigned the ListView to use and show the grouped data.**
 
+![Challenge 6 outcome](https://github.com/Depechie/XamarinAlliance/blob/master/Challenge%206/images/xa_screenshot1.png)
 
+## <a name="grouping"></a>Grouping
 
-## <a name="gettingstarted"></a>Getting Started
+Often, large sets of data can become unwieldy when presented in a continuously scrolling list. Enabling grouping can improve the user experience in these cases by better organizing the content and activating platform-specific controls that make navigating data easier.
 
-***Source code***
+When grouping is activated for a ListView, a header row is added for each group. How and on what you group your data is totally up to you, but some steps are needed to be taken care off before the ListView will render this content.
 
-We'll continue with the application from the [second challenge](https://github.com/msdxbelux/XamarinAlliance/tree/master/Challenge%202).  If you have not yet completed it, you can either complete that one first, or grab the completed sources from the [GitHub repository](https://github.com/msdxbelux/XamarinAlliance/tree/master/Challenge%202). 
+So to enable grouping you'll need to go through the following:
 
-If you're building your own application, you can continue working on that and move the application data to an Azure Mobile App in the cloud.
+* Create a list of lists (a list of groups, each group being a list of elements).
+* Set the ListView's ItemsSource to that list.
+* Set IsGroupingEnabled to true.
+* Set GroupDisplayBinding to bind to the property of the groups that is being used as the title of the group.
+* [Optional] Set GroupShortNameBinding to bind to the property of the groups that is being used as the short name for the group. The short name is used for the jump lists (rigt-side column on iOS - see example below, tile grid on Windows Phone).
 
+![Jump list iOS](https://github.com/Depechie/XamarinAlliance/blob/master/Challenge%206/images/xa_screenshot2.png)
 
-***Azure subscription***
+The first requirement, creating a list of lists, can be done in 2 different ways… Or your data service already provides a correct grouped stream, or you'll need to manipulate the given data into a correct format.
 
-If don't yet have an Azure subscription, there are multiple ways to get one:
+In our case, the current data service gives a list of characters with a list of movie appearences within. But for our challenge we want to group our characters per movie, so the lists need to be in the other order.
 
-* If you have an MSDN subscription, you have free Azure credits - [activate them](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits/)!
-* Get your free Azure credits with [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)
-* Get a 30-day [Azure free trial](https://azure.microsoft.com/en-us/free/)
-
-If you just want to connect to our Xamarin Alliance Mobile App, you can find it here: [http://xamarinalliancebackend.azurewebsites.net](http://xamarinalliancebackend.azurewebsites.net/)
-
-
-## <a name="createazure"></a>Creating an Azure Mobile App
-
-The first step to moving your data to the cloud is to create an Azure Mobile App. Once you have an Azure subscription (see above), this process will take just a few minutes to provision.
-
-The first step is to **provision a new Azure Mobile App** in the [Azure portal](https://portal.azure.com). Follow these steps to provision a new Azure Mobile App:
-
-1. Open the [Azure portal](https://portal.azure.com).
-2. Click +NEW and type Mobile Apps in the search box.
-3. Select *Mobile App* and click Create.
-4. Choose an app name for the mobile backend - this will provide you the endpoint URL for your Azure Mobile App.
-5. Choose a resource group name or use an existing one - a resource group is a deployment grouping and facilitates deleting related resources.
-6. Select a location for the backend.
-7. Click Create to start the provisioning - this might take a few minutes to complete.
-
-The second step is to **configure the server project**: select *App Deployment > Quickstart* and choose *Xamarin.Forms*.
-
-![Configure server quickstart](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%203/images/xa_azure_configure_server.jpg)
-
-The next step is to **create an Azure SQL Database** to host the application data.  Follow the instructions in the portal to create a new database.
-
-Finally, you need to **specify the programming language** you want to use to implement the mobile backend; you choose between .NET and Node.js. For the Xamarin Alliance template application we have chosen to implement the mobile backend in .NET. You can find the source code of the backend in the [GitHub repo](https://github.com/msdxbelux/XamarinAlliance/tree/master/Challenge%203).
-
-If you want to use a Node.js backend, check the [Azure online documentation](https://docs.microsoft.com/en-gb/azure/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk) for more details.
-
-If you're using a .NET backend, you can **download a starter project** and open it in Visual Studio. The backend for an Azure Mobile App is actually an ASP.NET Web API project, that exposes a REST-based service.
-
-![Download C# backend](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%203/images/xa_azure_download_csharp.jpg)
-
-You can now modify the mobile backend to match the data for your application. Take a look at the mobile backend we created for the Xamarin Alliance template application, as it demonstrates how to deal with tables that have relationships between each other (foreign keys).
-
-Once you have completed the mobile backend, you can publish the Visual Studio project to your Azure Mobile App:
-
-1. In Visual Studio, righ-click the project and click **Publish**.
-2. If asked to select a publish target, click **Microsoft Azure App Service** > Next (you may need to sign-in with your Azure credentials).
-3. Choose your subscription and select your Azure Mobile App > Click OK.
-4. Verify the publish profile information and click **Publish**.
-
-When the backend is published successfully, a browser window will open and you'll see the landing page for the mobile app. Note down the URL of the Azure Mobile App endpoint, as you'll need this for wiring up the Xamarin app to the mobile backend.
-
-More information about creating a mobile backend using .NET, can be found in the [Azure online documentation](https://docs.microsoft.com/en-gb/azure/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk).
-
-
-
-## <a name="connecttobackend"></a>Connecting to the Azure Mobile App 
-
-Now that we have our mobile backend up and running, we need to connect the Xamarin mobile application to this backend. To connect to an Azure Mobile App backend, we have a client SDK for you. We'll be using the SDK for Xamarin, but there are versions available for the different client development options.
-
-To install the Azure Mobile App SDK for Xamarin, first **add the [Microsoft.Azure.Mobile.Client](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) NuGet package**. This package provides the *MobileServiceClient* class to connect to the backend.
-
-> **Important:** you need to add the NuGet package to both the portable class library project, as well as the platform-specific projects.
-
-We then need to **instantiate and configure the *MobileServiceClient*** to connect to our endpoint by providing it the URL to our Azure Mobile App:
-
+To help out with reformatting the data, we have a small helper class that makes everything super easy to use and set up.
 ```csharp
-string mobileServiceClientUrl = "http://xamarinalliancebackend.azurewebsites.net";
-MobileServiceClient Client = new MobileServiceClient(mobileServiceClientUrl);
-```
-
-To make sure that we can **serialize the data coming from the server**, we need the classes that represent the data tables in the mobile backend. If you're using a .NET backend, you can reuse that classes from the backend. Below you find the *Movie* class.
-
-```csharp
-public class Movie
+public class Grouping<K, T> : ObservableCollection<T>
 {
-    Int32 id;
-    string title;
-    string description;
-    ICollection<Character> characters;
-
-    [JsonProperty(PropertyName = "id")]
-    public Int32 Id
-    {
-        get { return id; }
-        set { id = value; }
-    }
-
-    [JsonProperty(PropertyName = "title")]
-    public string Title
-    {
-        get { return title; }
-        set { title = value; }
-    }
-
-    [JsonProperty(PropertyName = "description")]
-    public string Description
-    {
-        get { return description; }
-        set { description = value; }
-    }
-
-    public string Version { get; set; }
+  public K Key { get; private set; }
+public Grouping(K key, IEnumerable<T> items)
+  {
+      Key = key;
+      foreach (var item in items)
+        this.Items.Add(item);
+  }
 }
 ```
 
-Alternatively, if you have been using a JSON backend, you'll need to create the corresponding classes in the Xamarin app. Note that you can generate the C# classes for a fragment of JSON in Visual Studio. Copy the JSON to the clipboard and in Visual Studio > select Edit > Paste Special > **Paste JSON as classes**.
+Grouping class seems simple, but is very extensible, especially if using data binding.
+Notice that a Grouping is really just an ObservableCollection of type T. However, each Grouping also has a Key.
 
-![Paste JSON as classes](https://github.com/msdxbelux/XamarinAlliance/blob/master/Challenge%203/images/xa_paste_classes.jpg)
+Now this key is of type K, which means it could be anything including a complex data structure. This means you could in theory bind your header to a data structure of K and then bind multiple controls to multiple properties, which is very cool.
 
-To get the JSON, you can invoke the mobile backend, which is just a REST-based service, using a tool like [Postman](https://www.getpostman.com/). Make sure to set the **ZUMO-API-VERSION** header to **2.0.0**. For example, to get the Character table content, use the following request:
+But for this example though we will just make K a string, because all we want to show for now is the movie title in which the character appeared.
 
-```
-GET http://xamarinalliancebackend.azurewebsites.net/tables/character
-HEADERS: ZUMO-API-VERSION: 2.0.0 
-```
-
-
-Once we're connected to the backend, we can start querying the tabular data. Before we can query the data, we **get a reference to the table** using the *GetTable* method. The *Character* class represents the Model class for the specific table as defined in the Azure Mobile App backend.
-
+You'll first need to change the current Items property in the CharacterListViewModel from
 ```csharp
-IMobileServiceTable<Character> CharacterTable = Client.GetTable<Character>();
+public ObservableRangeCollection<Character> Items { get; set; }
 ```
-
-Now we can **query the data using the LINQ** syntax:
-
+To
 ```csharp
-var characters = await CharacterTable.ToListAsync();
+public ObservableRangeCollection<Grouping<string, Character>> Items { get; set; } 
 ```
+That way we tackeld the fist item of our todo, creating a list of lists.
 
-So far, we have only read data from the backend but the SDK also supports **making modifications** (insert, update, delete) to the data:
+> **TIP:** Even though the Grouping class is very straightforward, you'll still need to do all the hard work yourself in code, to actually have a list of movies with each movie having a list of characters.
 
-```csharp
-await CharacterTable.InsertAsync(newCharacter);
-await CharacterTable.UpdateAsync(modifiedCharacter);
-await CharacterTable.DeleteAsync(badCharacter);
-```
+Best place to do this, is in the ExecuteLoadItemsCommand also in the CharacterListViewModel.
+After you got all the characters, be sure to iterate them and keep track of each movie available in the appearences list and by doing this, create a new list per movie and add the charactes.
+Be sure to use the Grouping class and have the movie title as the key field.
 
-The thing remaining is to **remove the JSON file** from the Xamarin application and to replace the call to read the data from the file by a call to **get the data from the mobile backend**.
+### <a name="design"></a>Design
 
-If you launch the app, you should see the same data as before, only the data is now coming from the Azure Mobile App. If you modify the data in the database and refresh the mobile client, you should see the updates appear in the app.
+This will tell the ListView to treat the given ItemSource as a Grouped one, meaning it will handle the List with Lists scenario. It also tells it what data part to use for the Group header.
+The code snippet above will already give us the correct sollution for this challenge, but will render each group header in an OS default look and feel.
+Although this can be enough for the some apps, we would like to format our headers in a nicer way and platform independent ( so same look and feel for each platform ).
 
+To do this, you'll need to add an extra DataTemplate, but this time not for an ItemTemplate, but one for a GroupHeaderTemplate.
 
-## <a name="resources"></a>Resources
+By using a DataTemplate you'll have all the freedom of designing your group header, as long as you bind to the data that is availabe in the Group. So in our case we are just limited to one string called Key.
+You have several options to present this Key field, I would suggest a TextCell or a Label.
 
-* https://developer.xamarin.com/guides/xamarin-forms/cloud-services/consuming/azure/
-* https://docs.microsoft.com/en-gb/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started
-* https://azure.microsoft.com/en-us/services/app-service/mobile/
-
+For a good example on this take a look [here](https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/customizing-list-appearance/#Grouping).
 
 ## <a name="completion"></a>Challenge Completion
 
-You have unlocked this challenge when:
+You have unlocked this challenge when you:
 
-1. **The Xamarin application connects to an Azure Mobile App backend.**
-2. **Optionally, you have built your own Azure Mobile App.**
+1. **reformatted the data from the service to a list of lists,**
+2. **redesigned the ListView to use and show the grouped data.**
 
-If you want to add offline capabilities to your mobile app, take a look at the [steps required](https://docs.microsoft.com/en-gb/azure/app-service-mobile/app-service-mobile-xamarin-forms-get-started-offline-data) to do so.
-
-When you have completed your coding challenge, collect your badge and feel free to tweet about it using the [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance) hashtag.
-
-
+When you have completed your coding challenge, feel free to tweet about using the [#XamarinAlliance](https://twitter.com/hashtag/xamarinalliance) hashtag.
 
 ## <a name="gethelp"></a>Getting help
 
