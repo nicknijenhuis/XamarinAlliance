@@ -12,7 +12,7 @@ Welcome to the sixth #XamarinAlliance challenge, and this time a **coding** chal
 
 ## <a name="description"></a>Challenge Description
 
-While using the Xamarin Alliance Template app, you'll see that we present all characters on the main page in a list. This works great and was enough to start out with.
+While using the Xamarin Alliance Template app, you'll see that we present all characters on the main page in a list. This works great and was enough to start off with.
 But often we like to show some separation, mostly done through data grouping.
 
 In our case we can alter the main page and use each character’s appearence to separate them based on which movie they act in, this by showing the movie title as a group header.
@@ -34,7 +34,6 @@ The goal of this coding challenge is improve the user experience of our app by *
 Often, large sets of data can become unwieldy when presented in a continuously scrolling list. Enabling grouping can improve the user experience in these cases by better organizing the content and activating platform-specific controls that make navigating data easier.
 
 When grouping is activated for a ListView, a header row is added for each group. How and on what you group your data is totally up to you, but some steps need to be taken care off before the ListView will render this content.
-
 So to enable grouping you'll need to go through the following:
 
 * Create a list of lists (a list of groups, each group being a list of elements).
@@ -45,9 +44,9 @@ So to enable grouping you'll need to go through the following:
 
 ![Jump list iOS](https://github.com/Depechie/XamarinAlliance/blob/master/Challenge%206/images/xa_screenshot2.png)
 
-The first requirement, creating a list of lists, can be done in 2 different ways… Or your data service already provides a correct grouped stream, or you'll need to manipulate the given data into a correct format.
+The first requirement, creating a list of lists, can be done in 2 different ways. Either your data service already provides a correct grouped stream, or you'll need to manipulate the given data into a correct format.
 
-In our case, the current data service gives a list of characters with a list of movie appearances within. But for our challenge we want to group our characters per movie, so the lists need to be in the other order.
+In this case, the current data service gives a list of characters with a list of movie appearances. But for our challenge we want to group our characters per movie, so the lists need to be in a different order.
 
 To help out with reformatting the data, we have a small helper class that makes everything super easy to use and set up.
 ```csharp
