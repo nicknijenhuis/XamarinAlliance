@@ -6,70 +6,29 @@ namespace XamarinAllianceApp.Models
 {
     public class Character
     {
-        Int32 id;
-        string name;
-        string biography;
-        string gender;
-        float height;
-        string databankUrl;
-        ICollection<Weapon> weapons;
-        ICollection<Movie> appearances;
-
         [JsonProperty(PropertyName = "id")]
-        public Int32 Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        public Int32 Id { get; set; }
 
         [JsonProperty(PropertyName = "name")]
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get; set; }
 
         [JsonProperty(PropertyName = "gender")]
-        public string Gender
-        {
-            get { return gender; }
-            set { gender = value; }
-        }
+        public string Gender { get; set; }
 
         [JsonProperty(PropertyName = "biography")]
-        public string Biography
-        {
-            get { return biography; }
-            set { biography = value; }
-        }
+        public string Biography { get; set; }
 
         [JsonProperty(PropertyName = "height")]
-        public float Height
-        {
-            get { return height; }
-            set { height = value; }
-        }
+        public float Height { get; set; }
 
         [JsonProperty(PropertyName = "databankUrl")]
-        public string DatabankUrl
-        {
-            get { return databankUrl; }
-            set { databankUrl = value; }
-        }
+        public string DatabankUrl { get; set; }
 
         [JsonProperty(PropertyName = "weapons")]
-        public ICollection<Weapon> Weapons
-        {
-            get { return weapons; }
-            set { weapons = value; }
-        }
+        public ICollection<Weapon> Weapons { get; set; }
 
         [JsonProperty(PropertyName = "appearances")]
-        public ICollection<Movie> Appearances
-        {
-            get { return appearances; }
-            set { appearances = value; }
-        }
+        public ICollection<Movie> Appearances { get; set; }
 
         public string Version { get; set; }
     }
